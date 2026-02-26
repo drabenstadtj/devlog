@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik+Broken+Fax&family=Space+Grotesk:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <link rel="icon" type="image/png" href="../favicon.png" />
+    <title>Lamport General Systems - Jack Drabenstadt</title>
+  </head>
+  <body>
+    <nav id="navbar">
+      <div class="navbar-top">
+        <span class="navbar-name">
+          <span class="name-full">Jack Drabenstadt</span>
+        </span>
+        <span class="navbar-page">Game Dev</span>
+        <div class="navbar-socials">
+          <a
+            href="/gamedev/pages/gamelog.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="navbar-resume"
+            >Dev Log</a
+          >
+          <a
+            href="https://www.linkedin.com/in/jackdrabenstadt/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn" data-tooltip="LinkedIn"
+            ><i class="fa-brands fa-linkedin"></i
+          ></a>
+          <a
+            href="https://github.com/drabenstadtj"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub" data-tooltip="GitHub"
+            ><i class="fa-brands fa-github"></i
+          ></a>
+          <a
+            href="https://drabenstadtj.itch.io/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Itch.io" data-tooltip="Itch.io"
+            ><i class="fa-brands fa-itch-io"></i
+          ></a>
+          <a
+            href="mailto:jackdrabenstadt@gmail.com"
+            aria-label="Email" data-tooltip="Email"
+          >
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+      <div class="navbar-links">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../projects.html" class="active">Projects</a></li>
+          <li><a href="../resume.html">Resume</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div id="navbar-spacer"></div>
+    <main class="content-strip">
+      <h1>Lamport General Systems</h1>
+
+      <div class="project-meta">
+        <span class="tag tag-live">In Development</span>
+        <span class="project-meta-divider"></span>
+        <span class="tag">Godot</span>
+        <span class="tag">GDScript</span>
+        <span class="tag">Blender</span>
+      </div>
+
+      <p>
+        A first-person immersive sim born out of an independent study at the
+        University of Pittsburgh. You play as a lone technician inside a
+        derelict data center, manipulating hostile Byzantine fault-tolerant
+        networks through message interception, code injection, and physical
+        sabotage.
+      </p>
+
+      <p>
+        Awarded the
+        <strong>Horror Studies Center 2025–2026 Student Scholarship</strong>
+        through the University of Pittsburgh Honors College — $800 toward
+        continued development, with a work-in-progress presentation at the HSC
+        Student Showcase in May 2026.
+      </p>
+
+      <h3>Design Documents</h3>
+      <div class="deliverables-grid">
+        <a
+          href="static/deliverables/lgs-concept-doc.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="deliverable"
+          >Concept Document</a
+        >
+        <a
+          href="static/deliverables/lgs_pitch.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="deliverable"
+          >Pitch Deck</a
+        >
+        <a
+          href="static/deliverables/lgs-design-overview.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="deliverable"
+          >Game Design Overview</a
+        >
+        <a
+          href="https://docs.google.com/spreadsheets/d/1gsxOsLgv5KC0yAQCA5NTgkqJE19fE6QPbrRXlvgOl84/edit?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="deliverable"
+          >Game Macro</a
+        >
+        <a
+          href="https://github.com/drabenstadtj/lamport-general-systems/releases"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="deliverable"
+          >Playable Prototype</a
+        >
+      </div>
+
+      <figure>
+        <img
+          src="../static/images/lgs_screenshot.png"
+          alt="Lamport General Systems terminal interface"
+          class="img-strip"
+        />
+        <figcaption>
+          The in-game terminal interface for interacting with the Lamport
+          General Systems network.
+        </figcaption>
+      </figure>
+
+      <h3>The Design Problem</h3>
+      <p>
+        <strong>Adapting BFT for gameplay.</strong> Byzantine fault-tolerant
+        protocols are deliberately resilient and opaque — resistant to exactly
+        the kind of interference a player needs to exert. I designed a custom
+        protocol tuned for interactive scenarios, preserving technical
+        authenticity while keeping the systems legible and meaningfully
+        vulnerable to player action.
+      </p>
+      <p>
+        <strong>Systemic depth vs. comprehension.</strong> The systems needed to
+        reward mastery without requiring a background in distributed systems to
+        engage with. This meant careful abstraction — enough emergent complexity
+        for interesting play, without impenetrable technical detail in the way.
+      </p>
+      <p>
+        <strong>Emergent world-building.</strong> Rather than front-loading
+        lore, the setting and narrative grew out of questions the gameplay
+        raised. The authoritarian surveillance state is the natural consequence
+        of asking "who would actually run a Byzantine fault-tolerant network,
+        and why?"
+      </p>
+
+      <figure>
+        <img
+          src="../static/images/lgs_screenshot2.png"
+          alt="Lamport General Systems environment assets"
+          class="img-strip"
+        />
+        <figcaption>
+          Low-poly server rack and monitoring terminal models.
+        </figcaption>
+      </figure>
+
+      <h3>Current Development</h3>
+      <p>
+        The foundation is built: player controller, PDA device, item viewing,
+        arrival cutscene, and the main corridor are all complete. Work is now
+        focused on the first real subnetwork — its gameplay loop and level
+        environment — along with a scene loader for seamless transitions between
+        areas of the facility. The humanoid robot AI system is next.
+      </p>
+    </main>
+    <script src="../static/js/navbar.js"></script>
+  </body>
+</html>

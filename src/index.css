@@ -1,0 +1,22 @@
+@font-face {
+  font-family: "IBM XGA";
+  src: url("./assets/Px437_IBM_XGA-AI_12x20.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --color-primary: #ffaa00;
+  --color-background: #0f0f0f;
+  --color-surface: #1a1a1a;
+  --color-text: #ffaa00;
+  --color-muted: #ffd47e;
+  --color-primary-subtle: rgba(255, 170, 0, 0.1);
+}
+
+body {
+  padding-top: 76px;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: "IBM XGA", monospace;
+}

@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik+Broken+Fax&family=Space+Grotesk:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <link rel="icon" type="image/png" href="../favicon.png" />
+    <title>Fight or Flight - Jack Drabenstadt</title>
+  </head>
+  <body>
+    <nav id="navbar">
+      <div class="navbar-top">
+        <span class="navbar-name">
+          <span class="name-full">Jack Drabenstadt</span>
+        </span>
+        <span class="navbar-page">Game Dev</span>
+        <div class="navbar-socials">
+          <a
+            href="/gamedev/pages/gamelog.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="navbar-resume"
+            >Dev Log</a
+          >
+          <a
+            href="https://www.linkedin.com/in/jackdrabenstadt/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn" data-tooltip="LinkedIn"
+            ><i class="fa-brands fa-linkedin"></i
+          ></a>
+          <a
+            href="https://github.com/drabenstadtj"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub" data-tooltip="GitHub"
+            ><i class="fa-brands fa-github"></i
+          ></a>
+          <a
+            href="https://drabenstadtj.itch.io/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Itch.io" data-tooltip="Itch.io"
+            ><i class="fa-brands fa-itch-io"></i
+          ></a>
+          <a
+            href="mailto:jackdrabenstadt@gmail.com"
+            aria-label="Email" data-tooltip="Email"
+          >
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+      <div class="navbar-links">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../projects.html" class="active">Projects</a></li>
+          <li><a href="../resume.html">Resume</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div id="navbar-spacer"></div>
+    <main class="content-strip">
+      <h1>
+        <a
+          href="https://drabenstadtj.itch.io/fight-or-flight"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="heading-link"
+          >Fight or Flight
+          <i class="fa-solid fa-arrow-up-right-from-square heading-arrow"></i
+        ></a>
+      </h1>
+
+      <div class="project-meta">
+        <a href="#play-it" class="tag tag-live"
+          ><i class="fa-solid fa-gamepad"></i> Playable</a
+        >
+        <a
+          href="https://drabenstadtj.itch.io/fight-or-flight"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="meta-link"
+          ><i class="fa-brands fa-itch-io"></i> itch.io</a
+        >
+        <span class="project-meta-divider"></span>
+        <span class="tag">Godot</span>
+        <span class="tag">GDScript</span>
+        <span class="tag">Blender</span>
+        <span class="tag">GIMP</span>
+      </div>
+
+      <p>
+        A 2.5D platformer built in 48 hours for the Pitt Games 4 Social Impact
+        Game Jam 2025, on the theme of migration. You play as Peng, a penguin
+        displaced from a melting iceberg — and unlike every other bird you
+        meet, you cannot fly. You can only waddle, slide, and jump.
+      </p>
+
+      <div class="game-wrapper" id="play-it">
+        <div class="game-placeholder" id="game-placeholder">
+          <img
+            src="../static/images/fight_flight_thumbnail.png"
+            alt="Fight or Flight"
+          />
+          <button
+            class="game-play-btn"
+            onclick="startGame()"
+            aria-label="Play game"
+          >
+            <i class="fa-solid fa-play"></i>
+          </button>
+        </div>
+        <iframe
+          id="game-frame"
+          data-src="../static/games/fight-or-flight/Fight%20Or%20Flight.html"
+          width="100%"
+          frameborder="0"
+          scrolling="no"
+          allowfullscreen
+          style="
+            display: none;
+            border-radius: 10px;
+            aspect-ratio: 16/9;
+            height: auto;
+          "
+        ></iframe>
+        <button
+          class="game-fullscreen-btn"
+          id="fullscreen-btn"
+          onclick="toggleFullscreen()"
+          title="Fullscreen"
+          style="display: none"
+        >
+          <i class="fa-solid fa-expand"></i>
+        </button>
+      </div>
+      <script>
+        function startGame() {
+          document.getElementById("game-placeholder").remove();
+          var iframe = document.getElementById("game-frame");
+          iframe.src = iframe.dataset.src;
+          iframe.style.display = "block";
+          document.getElementById("fullscreen-btn").style.display = "block";
+        }
+        function toggleFullscreen() {
+          var wrapper = document.getElementById("play-it");
+          var btn = document.getElementById("fullscreen-btn");
+          if (document.fullscreenElement) {
+            document.exitFullscreen();
+          } else if (wrapper.requestFullscreen) {
+            wrapper.requestFullscreen().catch(function () {
+              wrapper.classList.toggle("game-fullscreen-mobile");
+              updateFsIcon(
+                wrapper.classList.contains("game-fullscreen-mobile"),
+              );
+            });
+          } else {
+            wrapper.classList.toggle("game-fullscreen-mobile");
+            updateFsIcon(wrapper.classList.contains("game-fullscreen-mobile"));
+          }
+        }
+        function updateFsIcon(isFs) {
+          document
+            .getElementById("fullscreen-btn")
+            .querySelector("i").className = isFs
+            ? "fa-solid fa-compress"
+            : "fa-solid fa-expand";
+        }
+        document.addEventListener("fullscreenchange", function () {
+          updateFsIcon(!!document.fullscreenElement);
+        });
+      </script>
+
+      <h3>My Contributions</h3>
+      <p>
+        <strong>Dialogue system.</strong> I built a text display system for NPC
+        conversations where each bird has a unique text speed and sound pitch,
+        giving characters personality without voice acting. The variation in how
+        different birds "speak" reinforces their characterization mechanically.
+      </p>
+
+      <figure>
+        <video controls class="img-strip" style="border-radius: 10px">
+          <source
+            src="../static/videos/fight_or_flight_dialogue.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+        <figcaption>The dialogue system in action — each bird speaks at a unique text speed and sound pitch.</figcaption>
+      </figure>
+
+      <p>
+        <strong>Art and assets.</strong> In an unusual shift from my typical
+        programming-heavy role, I created environment assets including icebergs
+        and boulders. The 2.5D perspective required careful attention to scale
+        and placement to read correctly at all depths.
+      </p>
+      <p>
+        <strong>Git management.</strong> I served as the team's Git point
+        person, handling merge conflicts and repository organization throughout
+        the jam. This kept us moving fast without stepping on each other's work
+        — critical when four people are pushing to the same codebase under time
+        pressure.
+      </p>
+
+      <h3>Process</h3>
+      <p>
+        After last year's "First Penguin Award" (aim high, fail spectacularly),
+        I came in with a plan. We started with tight player experience goals,
+        which kept scope reasonable and focused. Core mechanics — movement,
+        dialogue, levels — were solid by end of day one. Day two was integration
+        and polish.
+      </p>
+      <h3>Outcome</h3>
+      <p>
+        Fight or Flight won the <strong>Technical Achievement Award</strong>.
+        The game came together with relatively few major issues, and the
+        structured approach I brought to the team made the difference.
+      </p>
+
+      <figure>
+        <img
+          src="../static/images/gamejam_award.jpg"
+          alt="Technical Achievement Award — Pitt Games 4 Social Impact 2025"
+          class="img-strip"
+        />
+        <figcaption>Fight or Flight receiving the Technical Achievement Award at Pitt Games 4 Social Impact 2025.</figcaption>
+      </figure>
+    </main>
+    <script src="../static/js/navbar.js"></script>
+  </body>
+</html>

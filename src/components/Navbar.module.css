@@ -1,0 +1,100 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 72px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-background);
+  border-bottom: 2px solid var(--color-primary);
+  font-size: 0.95em;
+  z-index: 100;
+}
+
+.navLeft {
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  align-self: stretch;
+  padding: 0 12px;
+  border-right: 2px solid transparent;
+  border-left: 2px solid transparent;
+  transition:
+    background-color 0.15s,
+    border-color 0.15s;
+}
+
+.navLeft:hover {
+  background-color: rgba(255, 170, 0, 0.1);
+  border-color: var(--color-primary);
+}
+
+.navLeft ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: -2px;
+  background-color: var(--color-background);
+  border: 2px solid var(--color-primary);
+  min-width: 160px;
+  flex-direction: column;
+  z-index: 101;
+}
+
+.navLeft:hover ul {
+  display: flex;
+}
+
+.navLeft ul li {
+  border-bottom: 2px solid var(--color-primary-subtle);
+}
+
+.navLeft ul li:last-child {
+  border-bottom: none;
+}
+
+.navLeft ul li a {
+  display: block;
+  padding: 10px 14px;
+  color: var(--color-primary);
+  text-decoration: none;
+  opacity: 0.8;
+  transition:
+    background-color 0.1s,
+    opacity 0.1s;
+}
+
+.navLeft ul li a:hover {
+  background: rgba(255, 170, 0, 0.1);
+  opacity: 1;
+}
+
+.logo {
+  height: 58px;
+  width: auto;
+  display: block;
+  filter: drop-shadow(0 0 4px rgba(255, 170, 0, 0.4));
+  transition: filter 0.15s;
+}
+
+.navLeft:hover .logo {
+  filter: drop-shadow(0 0 8px rgba(255, 170, 0, 0.8));
+}
+
+.navCenter {
+  color: var(--color-primary);
+}
+
+.navRight {
+  color: var(--color-primary);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.05em;
+  padding-right: 32px;
+}

@@ -1,0 +1,24 @@
+.panel {
+  margin: auto;
+}
+.panelHeading {
+  background-color: var(--color-primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  border-top: 2px solid var(--color-primary);
+  border-left: 2px solid var(--color-primary);
+  border-right: 2px solid var(--color-primary);
+  color: var(--color-background);
+}
+.panelContent {
+  border-bottom: 2px solid var(--color-primary);
+  border-left: 2px solid var(--color-primary);
+  border-right: 2px solid var(--color-primary);
+  padding: 16px;
+  color: var(--color-primary);
+}
+.panelContent p {
+  margin: 0;
+}
