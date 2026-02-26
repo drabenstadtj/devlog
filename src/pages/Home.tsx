@@ -12,6 +12,7 @@ export default function Home() {
       title: "Retrospective",
       meta: "Feb 23, 2026",
       content: "Catching up after a long gap...",
+      href: "/entries/robot-ai-system",
     },
   ];
   return (

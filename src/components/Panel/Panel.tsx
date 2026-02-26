@@ -1,11 +1,18 @@
 import styles from "./Panel.module.css";
 import type { PanelProps } from "../../types/Panel";
+import { Link } from "react-router-dom";
 
-export default function Panel({ title, meta, content }: PanelProps) {
+export default function Panel({ title, meta, content, href }: PanelProps) {
   return (
     <div className={styles.panel}>
       <div className={styles.panelHeading}>
-        <h2>{title}</h2>
+        {href ? (
+          <Link to={href}>
+            <h2>{title}</h2>
+          </Link>
+        ) : (
+          <h2>{title}</h2>
+        )}
         <div className={styles.panelMeta}>
           <p>{meta}</p>
         </div>

@@ -3,6 +3,7 @@ export type PanelProps = {
   meta?: string;
   content: string;
   tags?: string[];
+  href?: string;
 };
 
 export type PanelListProps = {

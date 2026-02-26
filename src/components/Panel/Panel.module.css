@@ -22,3 +22,6 @@
 .panelContent p {
   margin: 0;
 }
+.panelHeading a {
+  color: inherit;
+}
