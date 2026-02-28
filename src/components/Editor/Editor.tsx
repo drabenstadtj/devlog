@@ -62,7 +62,7 @@ export default function Editor() {
                     {alert ? <Alert alertText={alert} /> : <></>}
                     <div className={styles.editorMetadataInput}>
                         <label>
-                            Entry Title:{" "}
+                            Title:{" "}
                             <input
                                 name="titleInput"
                                 onChange={(e) => setTitle(e.target.value)}

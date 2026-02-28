@@ -8,6 +8,8 @@ import Editor from "./components/Editor/Editor";
 function App() {
   return (
     <>
+      <div className="overlay-noise" />
+      <div className="overlay-scanlines" />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
