@@ -1,24 +1,22 @@
+import Container from "../components/Container";
 import Navbar from "../components/Navbar";
 import Panel from "../components/Panel/Panel";
 import PanelList from "../components/PanelList/PanelList";
 export default function Home() {
   const entries = [
     {
-      title: "Robot AI System",
-      meta: "Feb 23, 2026",
-      content: "Designing the enemy AI...",
-    },
-    {
-      title: "Retrospective",
-      meta: "Feb 23, 2026",
-      content: "Catching up after a long gap...",
-      href: "/entries/robot-ai-system",
+      title: "Log Entries",
+      meta: "Number of log entries here",
+      content: "View all log entries.",
+      href: "/entries",
     },
   ];
   return (
     <>
       <Navbar />
-      <PanelList panels={entries} />
+      <Container>
+        <PanelList panels={entries} />
+      </Container>
     </>
   );
 }

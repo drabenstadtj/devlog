@@ -5,7 +5,8 @@ export const entries = sqliteTable("entries", {
   id: text("id").primaryKey(),
   // this is the panel props part
   title: text("title").notNull(),
-  meta: text("meta"),
+  description: text("description"),
+  date: text("date"),
   content: text("content").notNull(),
   tags: text("tags"), // store as comma-separated or JSON string
 });

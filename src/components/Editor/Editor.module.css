@@ -1,0 +1,161 @@
+.editor {
+    display: flex;
+    gap: 1rem;
+    margin: 0 32px;
+}
+
+.editorPanel,
+.previewPanel {
+    flex: 1;
+    padding: 16px 32px;
+}
+.previewPanel {
+    flex: 1;
+}
+
+.previewContent {
+    border-left: 2px solid var(--color-primary);
+    border-right: 2px solid var(--color-primary);
+    border-bottom: 2px solid var(--color-primary);
+    padding: 16px;
+}
+
+.editorMetadataInput {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 16px;
+    label {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    label:first-child {
+        flex: 1;
+
+        input {
+            flex: 1;
+        }
+    }
+}
+.editorDescription {
+    width: 100%;
+    height: 3lh;
+    resize: none;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+.editorInput textarea,
+.editorMetadataInput input,
+.editorDescription {
+    background-color: var(--color-background);
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    font-family: inherit;
+    font-size: inherit;
+    padding: 4px 8px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.editorInput textarea {
+    width: 100%;
+    height: 60vh;
+    resize: none;
+}
+
+.editorInput textarea:focus,
+.editorMetadataInput input:focus,
+.editorDescription:focus {
+    background-color: var(--color-primary-subtle);
+}
+
+.previewPlaceholder {
+    color: var(--color-muted);
+    border: 2px dashed var(--color-muted);
+    padding: 16px 32px;
+    opacity: 0.5;
+}
+
+.previewToggle {
+    display: flex;
+    align-items: flex-end;
+    gap: 0;
+    margin-bottom: 0;
+    border-bottom: 2px solid var(--color-primary);
+}
+
+.previewToggle span {
+    margin-right: 8px;
+    color: var(--color-muted);
+    font-size: 0.85em;
+    padding-bottom: 4px;
+}
+
+.previewToggle button {
+    background-color: var(--color-background);
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    border-bottom: none;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 4px 16px;
+    cursor: pointer;
+    margin-right: -2px;
+}
+
+.previewToggle .previewToggleActive {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    position: relative;
+    z-index: 1;
+}
+
+.loginRow {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+
+    input {
+        flex: 1;
+        background-color: var(--color-background);
+        color: var(--color-alert);
+        border: 2px solid var(--color-alert);
+        font-family: inherit;
+        font-size: inherit;
+        padding: 4px 8px;
+        outline: none;
+    }
+
+    input:focus {
+        background-color: rgba(252, 75, 26, 0.05);
+    }
+
+    button {
+        margin-top: 0;
+        border-color: var(--color-alert);
+        color: var(--color-alert);
+    }
+
+    button:hover {
+        background-color: var(--color-alert);
+        color: var(--color-background);
+    }
+}
+
+.submitButton {
+    margin-top: 8px;
+    background-color: var(--color-background);
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    font-family: inherit;
+    font-size: inherit;
+    padding: 4px 16px;
+    cursor: pointer;
+}
+
+.submitButton:hover {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+}

@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import Panel from "../components/Panel/Panel";
 import type { EntryData } from "../types/Entry";
 import { getEntry } from "../lib/api";
+import Container from "../components/Container";
 
 export default function Entry() {
   const { id } = useParams();
@@ -20,7 +21,9 @@ export default function Entry() {
   return (
     <>
       <Navbar />
-      <Panel {...entry} />
+      <Container>
+        <Panel {...entry} meta={entry.date} />
+      </Container>
     </>
   );
 }
