@@ -1,7 +1,7 @@
 import { db } from "../db/index";
 import { Router, Request, Response, NextFunction } from "express";
 import { entries } from "../db/schema";
-import { eq } from "drizzle-orm";
+import { eq, count } from "drizzle-orm";
 import requireAuth from "../utils/auth";
 const entriesRouter = Router();
 
@@ -40,8 +40,8 @@ entriesRouter.get("/tags", (_req, res) => {
 });
 
 entriesRouter.get("/count", (_req, res) => {
-    const count = db.select().from(entries).all().length;
-    res.json(count);
+    const result = db.select({ count: count() }).from(entries).get();
+    res.json(result?.count ?? 0);
 });
 
 // get entry by id

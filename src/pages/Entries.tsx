@@ -30,15 +30,11 @@ export default function Entries() {
         document.title = "Entries";
     }, []);
 
-    useEffect(() => {
-        getTags().then(setTags).catch(console.error);
-    }, []);
-
     const [error, setError] = useState(false);
 
     useEffect(() => {
-        getEntries()
-            .then(setEntries)
+        Promise.all([getEntries(), getTags()])
+            .then(([e, t]) => { setEntries(e); setTags(t); })
             .catch(() => setError(true));
     }, []);
 
@@ -63,27 +59,17 @@ export default function Entries() {
                     />
                 </Panel>
                 <PanelList
-                    panels={
-                        activeTags.length !== 0
-                            ? entries
-                                  .filter((e) =>
-                                      e.tags?.some((tag) =>
-                                          activeTags.includes(tag),
-                                      ),
-                                  )
-                                  .map((e) => ({
-                                      ...e,
-                                      meta: e.date,
-                                      content: e.description ?? e.content,
-                                      href: e.id,
-                                  }))
-                            : entries.map((e) => ({
-                                  ...e,
-                                  meta: e.date,
-                                  content: e.description ?? e.content,
-                                  href: e.id,
-                              }))
-                    }
+                    panels={(activeTags.length
+                        ? entries.filter((e) =>
+                              e.tags?.some((tag) => activeTags.includes(tag)),
+                          )
+                        : entries
+                    ).map((e) => ({
+                        ...e,
+                        meta: e.date,
+                        content: e.description ?? e.content,
+                        href: e.id,
+                    }))}
                 />
             </Container>
         </>

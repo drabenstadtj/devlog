@@ -45,7 +45,9 @@ export default function Editor() {
     const [entryChanged, setEntryChanged] = useState(false);
 
     useEffect(() => {
-        getEntries().then(setEntries).catch(console.error);
+        Promise.all([getEntries(), getTags()])
+            .then(([e, t]) => { setEntries(e); setTags(t); })
+            .catch(console.error);
     }, []);
 
     function handleLogin() {
@@ -54,14 +56,6 @@ export default function Editor() {
         setAuthenticated(true);
     }
 
-    useEffect(() => {
-        getTags().then(setTags).catch(console.error);
-    }, []);
-
-    useEffect(() => {
-        const currentDate = getCurrentDate();
-        setDate(currentDate);
-    }, []);
 
     async function handleSubmit() {
         if (!authenticated) {
