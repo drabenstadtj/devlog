@@ -6,6 +6,8 @@
     --color-muted: #a06800;
     --color-alert: #fc4b1a;
     --color-primary-subtle: rgba(255, 170, 0, 0.1);
+    --color-primary-light: #ffd47e;
+    --color-primary-dark: #7a4400;
 }
 
 body {

@@ -1,27 +1,25 @@
 .editor {
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
     margin: 0 32px;
 }
 
 .editorPanel,
 .previewPanel {
-    flex: 1;
+    flex: 1 1 400px;
     padding: 16px 32px;
-}
-.previewPanel {
-    flex: 1;
 }
 
 .previewContent {
-    border-left: 2px solid var(--color-primary);
-    border-right: 2px solid var(--color-primary);
-    border-bottom: 2px solid var(--color-primary);
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--color-primary-dark) var(--color-primary-light)
+        var(--color-primary-light) var(--color-primary-dark);
+    border-top: none;
     padding: 16px;
 }
 
-.editorEntrySelect {
-}
 
 .editorMetadataInput {
     display: flex;
@@ -54,7 +52,10 @@
 .editorDescription {
     background-color: var(--color-background);
     color: var(--color-primary);
-    border: 2px solid var(--color-primary);
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--color-primary-dark) var(--color-primary-light)
+        var(--color-primary-light) var(--color-primary-dark);
     font-family: inherit;
     font-size: inherit;
     padding: 4px 8px;
@@ -85,7 +86,10 @@
 .editorToolbarButton {
     background-color: var(--color-background);
     color: var(--color-primary);
-    border: 2px solid var(--color-primary);
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--color-primary-light) var(--color-primary-dark)
+        var(--color-primary-dark) var(--color-primary-light);
     border-bottom: none;
     font-family: inherit;
     font-size: 0.85em;
@@ -138,7 +142,10 @@
 .previewToggle button {
     background-color: var(--color-background);
     color: var(--color-primary);
-    border: 2px solid var(--color-primary);
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--color-primary-light) var(--color-primary-dark)
+        var(--color-primary-dark) var(--color-primary-light);
     border-bottom: none;
     font-family: inherit;
     font-size: inherit;
@@ -190,7 +197,10 @@
     margin-top: 16px;
     background-color: var(--color-background);
     color: var(--color-primary);
-    border: 2px solid var(--color-primary);
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--color-primary-light) var(--color-primary-dark)
+        var(--color-primary-dark) var(--color-primary-light);
     font-family: inherit;
     font-size: inherit;
     padding: 4px 16px;
@@ -211,7 +221,10 @@
 }
 .tagSelector :global(.rs__control) {
     background-color: var(--color-background);
-    border: 2px solid var(--color-primary);
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--color-primary-dark) var(--color-primary-light)
+        var(--color-primary-light) var(--color-primary-dark);
     border-radius: 0;
     box-shadow: none;
     font-family: inherit;
@@ -220,9 +233,9 @@
 }
 
 .tagSelector :global(.rs__control--is-focused) {
-    border-color: var(--color-primary);
+    border-color: var(--color-primary) !important;
     background-color: var(--color-primary-subtle);
-    box-shadow: none;
+    box-shadow: none !important;
 }
 
 .tagSelector :global(.rs__menu) {
@@ -234,15 +247,21 @@
 .tagSelector :global(.rs__option) {
     color: var(--color-primary);
     background-color: var(--color-background);
+    cursor: pointer;
 }
 
 .tagSelector :global(.rs__option--is-focused) {
-    background-color: var(--color-primary-subtle);
+    background-color: var(--color-primary-subtle) !important;
+    color: var(--color-primary) !important;
 }
 
 .tagSelector :global(.rs__option--is-selected) {
     background-color: var(--color-primary);
     color: var(--color-background);
+}
+
+.tagSelector :global(.rs__single-value) {
+    color: var(--color-primary);
 }
 
 .tagSelector :global(.rs__multi-value) {
@@ -254,11 +273,13 @@
     color: var(--color-background);
     font-family: inherit;
     font-size: inherit;
+    padding-right: 8px;
 }
 
 .tagSelector :global(.rs__multi-value__remove) {
     color: var(--color-background);
     border-radius: 0;
+    border-left: 2px solid var(--color-primary-dark);
 }
 
 .tagSelector :global(.rs__multi-value__remove:hover) {
@@ -280,4 +301,8 @@
 
 .tagSelector :global(.rs__dropdown-indicator) {
     color: var(--color-primary);
+}
+
+.tagSelector :global(.rs__menu-notice) {
+    color: var(--color-muted);
 }

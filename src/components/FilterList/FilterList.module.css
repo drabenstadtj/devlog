@@ -6,6 +6,7 @@
     border: 1px solid var(--color-primary);
     color: var(--color-primary);
     cursor: pointer;
+    user-select: none;
 
     &:has(input:checked) {
         background-color: var(--color-primary);

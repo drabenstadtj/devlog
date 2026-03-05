@@ -27,13 +27,13 @@ export default function Navbar() {
                 <img src={logo} alt="logo" className={styles.logo} />
                 <ul>
                     <li>
-                        <Link to="/">Home</Link>
+                        <Link to="/"><span className={styles.navIcon}>⌂</span> Home</Link>
                     </li>
                     <li>
-                        <Link to="/entries">Entries</Link>
+                        <Link to="/entries"><span className={styles.navIcon}>≡</span> Entries</Link>
                     </li>
                     <li>
-                        <Link to="/editor">Editor</Link>
+                        <Link to="/editor"><span className={styles.navIcon}>✎</span> Editor</Link>
                     </li>
                 </ul>
             </div>
