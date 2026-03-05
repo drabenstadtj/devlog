@@ -1,0 +1,32 @@
+.filterListLabel {
+    display: inline-block;
+    padding: 2px 8px;
+    margin-right: 6px;
+    margin-bottom: 4px;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    cursor: pointer;
+
+    &:has(input:checked) {
+        background-color: var(--color-primary);
+        color: var(--color-background);
+    }
+
+    &:hover {
+        background-color: rgba(255, 170, 0, 0.3);
+    }
+}
+
+.filterListCheckbox {
+    display: none;
+}
+
+.filterListNone {
+    border: 1px solid var(--color-alert);
+    color: var(--color-alert);
+
+    &:has(input:checked) {
+        background-color: var(--color-alert);
+        color: var(--color-background);
+    }
+}

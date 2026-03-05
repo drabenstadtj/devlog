@@ -44,3 +44,12 @@ Desktop.ini
 # Build artifacts
 build
 coverage
+
+# Database
+server/devlog.db
+server/devlog.db-shm
+server/devlog.db-wal
+
+# Uploaded images
+server/public/images/*
+!server/public/images/.gitkeep

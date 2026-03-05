@@ -20,10 +20,13 @@
     padding: 16px;
 }
 
+.editorEntrySelect {
+}
+
 .editorMetadataInput {
     display: flex;
     gap: 1rem;
-    margin-bottom: 16px;
+    margin: 16px 0;
     label {
         display: flex;
         align-items: center;
@@ -65,6 +68,36 @@
     resize: none;
 }
 
+.editorToolbar {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--color-primary);
+    margin-bottom: -2px;
+}
+
+.editorToolbarLabel {
+    color: var(--color-muted);
+    font-size: 0.85em;
+    padding-bottom: 4px;
+}
+
+.editorToolbarButton {
+    background-color: var(--color-background);
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    border-bottom: none;
+    font-family: inherit;
+    font-size: 0.85em;
+    padding: 2px 12px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--color-primary);
+        color: var(--color-background);
+    }
+}
+
 .editorInput textarea:focus,
 .editorMetadataInput input:focus,
 .editorDescription:focus {
@@ -84,6 +117,15 @@
     gap: 0;
     margin-bottom: 0;
     border-bottom: 2px solid var(--color-primary);
+}
+
+.previewToggleInactive {
+    display: flex;
+    align-items: flex-end;
+    gap: 0;
+    margin-bottom: 0;
+    border-bottom: 2px solid var(--color-primary);
+    background-color: transparent;
 }
 
 .previewToggle span {
@@ -145,7 +187,7 @@
 }
 
 .submitButton {
-    margin-top: 8px;
+    margin-top: 16px;
     background-color: var(--color-background);
     color: var(--color-primary);
     border: 2px solid var(--color-primary);
@@ -158,4 +200,84 @@
 .submitButton:hover {
     background-color: var(--color-primary);
     color: var(--color-background);
+}
+
+.tagSelectorContainer {
+    margin-top: 16px;
+}
+
+.tagSelector {
+    margin-top: 1px;
+}
+.tagSelector :global(.rs__control) {
+    background-color: var(--color-background);
+    border: 2px solid var(--color-primary);
+    border-radius: 0;
+    box-shadow: none;
+    font-family: inherit;
+    font-size: inherit;
+    min-height: unset;
+}
+
+.tagSelector :global(.rs__control--is-focused) {
+    border-color: var(--color-primary);
+    background-color: var(--color-primary-subtle);
+    box-shadow: none;
+}
+
+.tagSelector :global(.rs__menu) {
+    background-color: var(--color-background);
+    border: 2px solid var(--color-primary);
+    border-radius: 0;
+}
+
+.tagSelector :global(.rs__option) {
+    color: var(--color-primary);
+    background-color: var(--color-background);
+}
+
+.tagSelector :global(.rs__option--is-focused) {
+    background-color: var(--color-primary-subtle);
+}
+
+.tagSelector :global(.rs__option--is-selected) {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+}
+
+.tagSelector :global(.rs__multi-value) {
+    background-color: var(--color-primary);
+    border-radius: 0;
+}
+
+.tagSelector :global(.rs__multi-value__label) {
+    color: var(--color-background);
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.tagSelector :global(.rs__multi-value__remove) {
+    color: var(--color-background);
+    border-radius: 0;
+}
+
+.tagSelector :global(.rs__multi-value__remove:hover) {
+    background-color: var(--color-background);
+    color: var(--color-primary);
+}
+
+.tagSelector :global(.rs__input) {
+    color: var(--color-primary) !important;
+}
+
+.tagSelector :global(.rs__placeholder) {
+    color: var(--color-muted);
+}
+
+.tagSelector :global(.rs__indicator-separator) {
+    background-color: var(--color-primary);
+}
+
+.tagSelector :global(.rs__dropdown-indicator) {
+    color: var(--color-primary);
 }

@@ -28,3 +28,47 @@
 .panelHeading a {
     color: inherit;
 }
+
+.panelDropdownButton {
+    font-size: 20px;
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    transition: transform 0.2s ease;
+    &:hover {
+        color: var(--color-muted);
+    }
+}
+
+.panelDropdownButtonCollapsed {
+    font-size: 20px;
+
+    transform: rotate(90deg);
+    &:hover {
+        color: var(--color-muted);
+    }
+}
+
+.markdownFigure {
+    margin: 20px 0;
+    border: 2px solid var(--color-primary);
+    padding: 0;
+}
+
+.markdownImage {
+    width: 100%;
+    display: block;
+    border: none;
+    filter: contrast(1.1) brightness(0.9);
+}
+
+.markdownCaption {
+    background-color: var(--color-primary-subtle);
+    padding: 10px;
+    margin: 0;
+    font-size: 0.9em;
+}
+
+.markdownCaption::before {
+    content: "> ";
+}
